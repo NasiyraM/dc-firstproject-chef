@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chessboard with Bootstrap</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+
+    <style>
+      .container {
+        height: 1200px;
+      }
+
+      .col-2 {
+        height: 200px;
+      }
+    </style>
+
+    <script type="text/javascript">
+    function hideOrShowChessboard(){
+      var chessboard = document.getElementById('chessboard');
+      var chessButton = document.getElementById('chessButton');
+      console.log(chessboard.style.display);
+
+      if (chessboard.style.display == 'none') {
+        chessboard.style.display = 'block';
+        chessButton.value = 'Hide Board';
+      } else {
+        chessboard.style.display = 'none';
+        chessButton.value = 'Show Board';
+      }
+    }
+
+    function hideOrShowWarning() {
+      console.log('starting warning function');
+
+      var warnings = document.getElementsByClassName('bg-warning');
+      var newDisplay = '';
+
+      if (warnings[0].style.display == 'none') {
+        newDisplay = 'block';
+      } else {
+        newDisplay = 'none';
+      }
+
+      console.log('display will change to: ' + newDisplay);
+
+      for ( var i = 0 ; i < warnings.length ; i++ ) {
+        warnings[i].style.display = newDisplay;
+      }
+
+      console.log('finished warning function');
+    }
+
+    function hideOrShowDanger() {
+      console.log('danger');
+    }
+    </script>
+  </head>
+  <body>
+    <input type="button" id="chessButton" value="Hide Board" onclick="hideOrShowChessboard()" />
+    <input type="button" id="warningButton" value="Hide warning squares" onclick="hideOrShowWarning()" />
+    <input type="button" id="dangerButton" value="Hide danger squares" onclick="hideOrShowDanger()" />
+    <div id="chessboard" class="container bg-dark">
+      <div class="row">
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+        <div class="col-2 bg-danger"></div>
+        <div class="col-2 bg-warning"></div>
+      </div>
+    </div>
+  </body>
+</html>
